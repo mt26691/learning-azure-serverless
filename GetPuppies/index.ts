@@ -9,7 +9,6 @@ const auth = {
 
 const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
 
-    
     MongoClient.connect(`mongodb://${process.env.CosmosDBUser}:${process.env.CosmosDBPassword}@mt2606.documents.azure.com:10255/?ssl=true`, { auth: auth }, function (err, db) {
         if (err) {
             context.res = {
